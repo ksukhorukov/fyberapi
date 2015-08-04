@@ -1,0 +1,22 @@
+<% unless offers.nil? %> 
+<div class="panel panel-success">
+  <div class="panel-heading">Offers</div>
+    <table class="table">
+       <tr>
+          <th>Title</th>
+          <th>Thumbnail</th>
+          <th>Payout</th>
+        </tr>
+      <% offers.each do |offer| %>
+        <tr>
+          <td><%= offer['title'] %></td>
+          <td><img src='<%= offer['thumbnail']['lowres'] %>'></td>
+          <td><%= offer['payout'] %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% else %>
+  <h2>No offers found</h2>
+<% end %>
+
